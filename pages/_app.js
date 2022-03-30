@@ -1,14 +1,24 @@
+import { useRouter } from 'next/router'
+
 import { appWithTranslation } from 'next-i18next'
 import { AnimatePresence } from 'framer-motion'
 
 import { Layout } from '../components/Layout'
 
-const MyApp = ({ Component, pageProps, router }) => (
+const MyApp = ({ Component, pageProps }) => (
   <Layout>
-    <AnimatePresence exitBeforeEnter>
-      <Component key={router.asPath} {...pageProps} />
-    </AnimatePresence>
+    <Component {...pageProps} />
   </Layout>
 )
 
-export default appWithTranslation(MyApp)
+export default function AppWithTransition(props) {
+
+  const App = appWithTranslation(MyApp)
+  const router = useRouter()
+
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <App key={router.asPath} {...props} />
+    </AnimatePresence>
+  )
+}
