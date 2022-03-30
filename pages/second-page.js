@@ -4,6 +4,8 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { motion } from 'framer-motion'
 
+import { Layout } from '../components/Layout'
+
 const SecondPage = () => {
 
   const { t } = useTranslation('second-page')
@@ -24,6 +26,8 @@ const SecondPage = () => {
     </motion.div>
   )
 }
+
+SecondPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

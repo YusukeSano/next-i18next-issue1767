@@ -3,13 +3,10 @@ import { useRouter } from 'next/router'
 import { appWithTranslation } from 'next-i18next'
 import { AnimatePresence } from 'framer-motion'
 
-import { Layout } from '../components/Layout'
-
-const MyApp = ({ Component, pageProps }) => (
-  <Layout>
-    <Component {...pageProps} />
-  </Layout>
-)
+const MyApp = ({ Component, pageProps }) => {
+  const getLayout = Component.getLayout ?? ((page) => page)
+  return getLayout(<Component {...pageProps} />)
+}
 
 export default function AppWithTransition(props) {
 

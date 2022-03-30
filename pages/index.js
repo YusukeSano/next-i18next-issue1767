@@ -5,6 +5,8 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { motion } from 'framer-motion'
 
+import { Layout } from '../components/Layout'
+
 const Homepage = () => {
 
   const router = useRouter()
@@ -34,6 +36,8 @@ const Homepage = () => {
     </motion.div>
   )
 }
+
+Homepage.getLayout = (page) => <Layout>{page}</Layout>
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
