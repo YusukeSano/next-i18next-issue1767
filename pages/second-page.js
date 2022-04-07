@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
-import { useTranslation } from 'next-i18next'
+import useNextTranslation from '../hooks/useNextTranslation'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { Layout } from '../components/Layout'
 
 const SecondPage = () => {
 
-  const { t } = useTranslation('second-page')
+  const { t } = useNextTranslation('second-page')
 
   return (
     <Link href='/'>

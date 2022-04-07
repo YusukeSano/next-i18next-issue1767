@@ -1,9 +1,9 @@
 import { version } from 'next-i18next/package.json'
-import { useTranslation } from 'next-i18next'
+import useNextTranslation from '../hooks/useNextTranslation'
 
 export const Footer = () => {
 
-  const { t } = useTranslation('footer')
+  const { t } = useNextTranslation('footer')
 
   return (
     <footer>
