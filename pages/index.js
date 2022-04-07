@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import useNextTranslation from '../hooks/useNextTranslation'
+import useTranslation from '../hooks/useTranslation'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { Layout } from '../components/Layout'
@@ -9,7 +9,7 @@ import { Layout } from '../components/Layout'
 const Homepage = () => {
 
   const router = useRouter()
-  const { t } = useNextTranslation('common')
+  const { t } = useTranslation('common')
 
   return (
     <>

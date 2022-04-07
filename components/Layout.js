@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import useNextTranslation from '../hooks/useNextTranslation'
+import useTranslation from '../hooks/useTranslation'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { Header } from "../components/Header";
@@ -9,7 +9,7 @@ import { Footer } from "../components/Footer";
 export const Layout = ({ children }) => {
   
   const router = useRouter()
-  const { t } = useNextTranslation(router.pathname === '/' ? 'common' : 'second-page')
+  const { t } = useTranslation(router.pathname === '/' ? 'common' : 'second-page')
 
   return (
     <>
